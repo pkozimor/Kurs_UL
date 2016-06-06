@@ -1,3 +1,68 @@
 .row {
     display: block;
 }
+.column {
+    display : block;
+    float : left;
+    width : 45%;
+    margin : 0 2%;
+}
+
+.column * {
+    display : block;
+    padding : 1rem 1rem;
+    color : white;
+    margin : 0;
+}
+
+.column:first-child h1 {
+    background-color: black;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.column:first-child p {
+    color : black;
+    background-color: lightgrey;
+    border-radius: 0 0 2rem 2rem;
+}
+
+.column:last-child {
+    border-color: black;
+    box-shadow: 0.3rem 0.3rem 0.1rem 0.1rem grey;
+    border-style: solid; 
+}
+
+.column:last-child h1 {
+    background-color:  orange;
+    font-style : italic;
+}
+
+.column:last-child p {
+    background-color:  green;
+}
+
+.column:last-child p:first-line {
+    text-shadow : -0.20rem 0.20rem 0.20em cyan;
+    font-weight : bold;
+}
+
+.row:last-child h1 {
+    text-align: center;
+    
+}
+
+.row:last-child p {
+    overflow: hidden;
+    margin-right: 10%;
+    margin-left: 10%;
+    white-space: nowrap;
+}
+
+.row:last-child p:before {
+    display: inline-block;
+    content: "";
+    background: url("cat.jpg") ;  
+    background-size: 6rem 6rem;
+    padding: 6rem 6rem 0 0 ;    
+    
+}
