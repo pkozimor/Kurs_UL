@@ -60,35 +60,96 @@
         
         
         function addStandardBook(title) {
-            //!!!!!!!!!
+            //!!!!!!!!!    
+            if(title.length>0){   
+            library.standards.push({
+               title: title,
+               isBorrowed: false 
+            });}
         }
         
         function addVipBook(title) {
             //!!!!!!!!!
+            if(title.length>0){
+            library.vip.push({
+               title: title,
+               isBorrowed: false 
+            });}
         }
         
         function borrowStandardBook(title) {
             //!!!!!!!!!
+             for(i=0;i<library.standards.length;i++){
+                 if(library.standards[i].isBorrowed === false
+                     && library.standards[i].title === title){
+                        library.standards[i].isBorrowed = true;
+                        break;
+                    }
+             }
+             
         }
         
         function borrowVipBook(title) {
             //!!!!!!!!!
+            for(i=0;i<library.vip.length;i++){
+                if(library.vip[i].isBorrowed === false &&
+                    library.vip[i].title === title){
+                        library.vip[i].isBorrowed = true;
+                        break;
+                    }
+            }
         }
         
         
         function printStandards() {
-            var free = 's', borrowed = 'sb';
+            var free = '', borrowed = '';
             
-            //!!!!!!!!!
+            library.standards.filter(function(book){
+               if(book.isBorrowed){
+                   return false;
+               }else{
+                   return true;
+               }
+            }).forEach(function(book){
+                free += book.title  + " | ";
+            });
+            
+            library.standards.filter(function(book){
+               if(book.isBorrowed){
+                   return true;
+               }else{
+                   return false;
+               }
+            }).forEach(function(book){
+                borrowed += book.title  + " | ";
+            });
             
             document.getElementById("standardFreeLabel").innerHTML = free;
             document.getElementById("standardBorrowedLabel").innerHTML = borrowed;
         }
         
         function printVip() {
-            var free = 'v', borrowed = 'vb';
+            var free = '', borrowed = '';
             
-            //!!!!!!!!!
+            library.vip.filter(function(book){
+               if(book.isBorrowed){
+                   return false;
+               }else{
+                   return true;
+               }
+            }).forEach(function(book){
+                free += book.title  + " | ";
+            });
+            
+            library.vip.filter(function(book){
+               if(book.isBorrowed){
+                   return true;
+               }else{
+                   return false;
+               }
+            }).forEach(function(book){
+                borrowed += book.title  + " | ";
+            });
             
             document.getElementById("vipFreeLabel").innerHTML = free;
             document.getElementById("vipBorrowedLabel").innerHTML = borrowed;

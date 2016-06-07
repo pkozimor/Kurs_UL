@@ -7,11 +7,16 @@
 
 	addManyValues = function () {
         var sum = 0;
-        
         // !!! add all arguments to sum
-        
+        for(i=0;i<arguments.length;i++){
+            sum+=arguments[i];
+        }
         // !!! return function for use sum value as a base for next arythmetic operation but without change value of sum variable
         return function() {
+            for(i=0; i<arguments.length;i++){
+                sum+=arguments[i];
+            }
+          return sum;
         };
 	};
 

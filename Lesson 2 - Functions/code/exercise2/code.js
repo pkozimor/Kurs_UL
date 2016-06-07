@@ -9,6 +9,9 @@
         var newArr = [];
         
         // add code for maping
+        for(i=0; i<array.length; i++){
+            newArr[i] = callback.bind(ctx)(array[i], i, array);
+        }
         
         return newArr;
 	};

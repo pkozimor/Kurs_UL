@@ -42,22 +42,48 @@
         
         function countBoolean() {
             //!!!!!!!!!
-            return 0;
+            var i = 0;
+            arr.forEach(function(b) {
+                if(typeof b === 'boolean'){
+                    i++
+                }  
+            });
+            return i;
         }
         
         function countNumber() {
             //!!!!!!!!!
-            return 0;
+            var i = 0;
+            arr.forEach(function(n) {
+                if(typeof n === 'number'){
+                    i++
+                }      
+            });
+            return i;
         }
         
         function countString() {
             //!!!!!!!!!
-            return 0;
+            var i = 0;
+            arr.forEach(function(s) {
+                if(typeof s === 'string'){
+                    i++
+                }
+                
+            });
+            return i;
         }
         
         function countFalsy() {
             //!!!!!!!!!
-            return 0;
+            var i = 0;
+            arr.forEach(function(f) {
+                if(!f){
+                    i++;
+                }
+                
+            });
+            return i;
         }
         
         function refresh() {
